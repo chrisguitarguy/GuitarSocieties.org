@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% load i18n %}
+
+{% block body %}
+    <h1>{{ country.name }} {% trans 'Guitar Societies' %} </h1>
+    <ul>
+    {% for society in societies %}
+        <li><a href="{% url 'societies:single' society.id %}">{{ society.name }}</a> &mdash; <em>{{ society.region }}</em></li>
+    {% endfor %}
+    </ul>
+{% endblock %}
