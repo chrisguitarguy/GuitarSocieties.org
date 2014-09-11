@@ -1681,3 +1681,5 @@ th.hide-for-touch { display: table-cell !important; }
 
 #footer { padding: 1em 0; margin-top: 2em; border-top: 1px solid #EFEFEF; }
 #footer p { font-size: 0.8em; }
+
+#main { padding: 2em 0 0; }

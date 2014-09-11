@@ -5,7 +5,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block headtitle %}{% endblock %}</title>
+    <title>{% block headtitle %}{% endblock %} :: ClassicalGuitar.org</title>
+    <meta name="robots" content="noindex,nofollow" />
+    {% block head_meta %}{% endblock %}
 
     <link rel="stylesheet" href="{% static 'css/app.css' %}" />
     {% block stylesheets %}{% endblock %}
@@ -21,7 +23,7 @@
     <header id="header" class="row">
         <div class="small-12 columns">
             <h1 class="branding"><a href="{% url 'homepage' %}">{% trans 'Classical Guitar' %}</a></h1>
-            <h4 class="tagline">{% trans 'Classical Guitar Lessons, Interview, News, Tips & More' %}</h4>
+            <h4 class="tagline">{% trans 'Classical Guitar Lessons, Interviews, News, Tips & More' %}</h4>
         </div>
     </header>
     {% endblock %}
@@ -39,8 +41,10 @@
     </div>
     {% endblock %}
 
-    <div class="row">
-        {% block body %}{% endblock %}
+    <div id="main">
+        <div class="row">
+            {% block body %}{% endblock %}
+        </div>
     </div>
 
     {% block main_footer %}
