@@ -1,4 +1,5 @@
 /.env/*
+/static/*
 
 # ignore certain files
 *.pyc
