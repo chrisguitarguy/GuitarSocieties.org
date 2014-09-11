@@ -1673,3 +1673,11 @@ th.hide-for-touch { display: table-cell !important; }
   tr.show-for-print { display: table-row !important; }
   td.show-for-print { display: table-cell !important; }
   th.show-for-print { display: table-cell !important; } }
+#header { padding: 1em 0; }
+#header h1 { margin: 0; line-height: 1; }
+#header h4 { font-size: 1em; font-weight: normal; font-style: italic; margin: 0; }
+#header h1 a { color: #222; }
+#header h1 a:hover { color: #3c3c3c; }
+
+#footer { padding: 1em 0; margin-top: 2em; border-top: 1px solid #EFEFEF; }
+#footer p { font-size: 0.8em; }

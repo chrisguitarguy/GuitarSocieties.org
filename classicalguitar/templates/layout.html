@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles i18n %}
 <!DOCTYPE html{%block doctype %}{% endblock %}>
 <html dir="ltr" lang="en-us">
 <head>
@@ -17,7 +17,48 @@
     {% block scripts %}{% endblock %}
 </head>
 <body class="{% block bodyclass %}{% endblock %}>">
-    {% block body %}{% endblock %}
+    {% block main_header %}
+    <header id="header" class="row">
+        <div class="small-12 columns">
+            <h1 class="branding"><a href="{% url 'homepage' %}">{% trans 'Classical Guitar' %}</a></h1>
+            <h4 class="tagline">{% trans 'Classical Guitar Lessons, Interview, News, Tips & More' %}</h4>
+        </div>
+    </header>
+    {% endblock %}
+    {% block main_navigation %}
+    <div class="contain-to-grid">
+        <nav class="top-bar" data-topbar role="navigation">
+            <section class="top-bar-section">
+                <ul>
+                    <li class="{% block society_nav_class %}{% endblock %}">
+                        <a href="{% url 'societies:index' %}">{% trans 'Guitar Societies' %}</a>
+                    </li>
+                </ul>
+            </section>
+        </nav>
+    </div>
+    {% endblock %}
+
+    <div class="row">
+        {% block body %}{% endblock %}
+    </div>
+
+    {% block main_footer %}
+    <footer id="footer">
+        <div class="row">
+            <div class="small-12 columns">
+                <p>
+                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+                        <img alt="{% trans 'Creative Commons License' %}" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
+                    </a>
+                    {% trans "Website by" %}
+                    <a href="http://christopherdavis.me" rel="external">Christopher Davis</a>.
+                </p>
+            </div>
+        </div>
+    </footer>
+    {% endblock %}
+
     {% block footer_scripts %}{% endblock %}
 </body>
 </html>
