@@ -1,13 +1,15 @@
 {% load staticfiles i18n %}
 <!DOCTYPE html{%block doctype %}{% endblock %}>
-<html dir="ltr" lang="en-us">
+<html dir="ltr" lang="en-us" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block headtitle %}{% endblock %} :: ClassicalGuitar.org</title>
     <meta name="robots" content="noindex,nofollow" />
-    {% block head_meta %}{% endblock %}
+    <meta property="og:type" content="{% block headogtype %}website{% endblock %}" />
+    <meta property="og:sitename" content="ClassicalGuitar.org" />
+    {% block headmeta %}{% endblock %}
 
     <link rel="stylesheet" href="{% static 'css/app.css' %}" />
     {% block stylesheets %}{% endblock %}

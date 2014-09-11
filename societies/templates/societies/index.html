@@ -2,7 +2,13 @@
 
 {% load i18n %}
 
-{% block headtitle %}Find a Classical Guitar Society{% endblock %}
+{% block headtitle %}{% trans "Find a Classical Guitar Society" %}{% endblock %}
+
+{% block headmeta %}
+<meta name="description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society near you." %}" />
+<meta property="og:title" content="{% trans "List of Classical Guitar Societies" %}" />
+<meta property="og:description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society near you." %}" />
+{% endblock %}
 
 {% block society_body %}
     <h1 class="page-title">{% trans 'Guitar Societies' %}</h1>

@@ -2,7 +2,13 @@
 
 {% load i18n %}
 
-{% block headtitle %}{{ country.name }} {% trans 'Guitar Societies' %}{% endblock %}
+{% block headtitle %}{{ country.name }} {% trans "Classical Guitar Societies" %}{% endblock %}
+
+{% block headmeta %}
+<meta name="description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society in" %} {{ country.name }}." />
+<meta property="og:title" content="{{ country.name }} {% trans "Classical Guitar Societies." %}" />
+<meta property="og:description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society in" %} {{ country.name}}." />
+{% endblock %}
 
 {% block society_body %}
     <h1 class="page-title">{{ country.name }} {% trans 'Guitar Societies' %}</h1>
