@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% load i18n %}
+
+{% block society_nav_class %}active{% endblock %}
+
+{% block body %}
+<div class="small-12 medium-9 columns">
+    {% block society_body %}{% endblock %}
+</div>
+<div class="small-12 medium-3 columns sidebar">
+    <ul class="side-nav">
+    {% for country in all_societies %}
+    <li>
+        <a href="{% url 'societies:country' country.code|lower %}">{{ country.name }}</a>
+    </li>
+    {% endfor %}
+</div>
+{% endblock %}

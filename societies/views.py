@@ -1,9 +1,17 @@
 # -*- coding: utf-8 -*-
 
+from collections import OrderedDict
 import urllib.parse as urlparse
 from django.shortcuts import get_object_or_404, get_list_or_404, redirect, render
 from django_countries import countries
 from .models import GuitarSociety
+
+def _get_all_societies():
+    all_societies = GuitarSociety.objects.all().order_by('country', 'region')
+    societies = OrderedDict()
+    for soc in all_societies:
+        societies.setdefault(soc.country, list()).append(soc)
+    return societies
 
 
 def index(request):
@@ -14,10 +22,7 @@ def index(request):
 
     :param request: the django request object
     """
-    all_societies = GuitarSociety.objects.all().order_by('country', 'region')
-    societies = dict()
-    for soc in all_societies:
-        societies.setdefault(soc.country, list()).append(soc)
+    societies = _get_all_societies()
 
     return render(request, 'societies/index.html', {
         'all_societies': societies,
@@ -27,9 +32,11 @@ def index(request):
 def country(request, country):
     societies = get_list_or_404(GuitarSociety, country=country.upper())
     country = societies[0].country
+    print(_get_all_societies())
 
     return render(request, 'societies/country.html', {
         'societies': societies,
+        'all_societies': _get_all_societies(),
         'country': country
     })
 
