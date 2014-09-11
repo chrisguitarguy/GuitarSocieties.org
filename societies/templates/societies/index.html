@@ -15,9 +15,12 @@
     {% for country, societies in all_societies.items %}
     <h4>{{ country.name }}</h4>
     <ul>
-        {% for society in societies %}
-            <li><a href="{% url 'societies:single' society.id %}">{{ society.name }}</a> &mdash; <em>{{ society.region }}</em></li>
-        {% endfor %}
+    {% for society in societies %}
+        <li>
+            <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
+            {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
+        </li>
+    {% endfor %}
     </ul>
     {% endfor %}
 {% endblock %}

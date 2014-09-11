@@ -14,7 +14,10 @@
     <h1 class="page-title">{{ country.name }} {% trans 'Guitar Societies' %}</h1>
     <ul>
     {% for society in societies %}
-        <li><a href="{% url 'societies:single' society.id %}">{{ society.name }}</a> &mdash; <em>{{ society.region }}</em></li>
+        <li>
+            <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
+            {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
+        </li>
     {% endfor %}
     </ul>
 {% endblock %}
