@@ -26,7 +26,7 @@ class GuitarSociety(models.Model):
     #: A free form "city" or "region" field used to display where
     #: exactly the society is within a country
     #: .. versionadded:: 0.1
-    region = models.CharField(max_length=512)
+    region = models.CharField(max_length=512, null=True, default=None)
 
     def __str__(self):
         return 'GuitarSociety(name="{}", link="{}")'.format(self.name, self.link)
