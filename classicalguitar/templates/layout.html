@@ -1,4 +1,5 @@
-<!DOCTYPE html{%block docttype %}{% endblock %}>
+{% load staticfiles %}
+<!DOCTYPE html{%block doctype %}{% endblock %}>
 <html dir="ltr" lang="en-us">
 <head>
     <meta charset="utf-8" />
@@ -6,9 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{% block headtitle %}{% endblock %}</title>
 
+    <link rel="stylesheet" href="{% static 'css/app.css' %}" />
     {% block stylesheets %}{% endblock %}
 
-    {% block scripts %}{%endblock %}
+    <script src="{% static 'vendor/modernizr/modernizr.js' %}"></script>
+    <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'vendor/fastclick/lib/fastclick.js' %}"></script>
+    <script src="{% static 'vendor/foundation/js/foundation.min.js' %}"></script>
+    {% block scripts %}{% endblock %}
 </head>
 <body class="{% block bodyclass %}{% endblock %}>">
     {% block body %}{% endblock %}
