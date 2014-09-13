@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+societies.admin
+~~~~~~~~~~~~~~~
+
+:copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
+:license: Proprietary
+"""
 
 from django.contrib import admin
 from .models import GuitarSociety

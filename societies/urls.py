@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+societies.urls
+~~~~~~~~~~~~~~
+
+:copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
+:license: Proprietary
+"""
 
 from django.conf.urls import patterns, url
 from . import views

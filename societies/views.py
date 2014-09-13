@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+societies.views
+~~~~~~~~~~~~~~~
+
+:copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
+:license: Proprietary
+"""
 
 from collections import OrderedDict
 import urllib.parse as urlparse

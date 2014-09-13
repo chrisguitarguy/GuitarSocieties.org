@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+societies.models
+~~~~~~~~~~~~~~~~
+
+:copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
+:license: Proprietary
+"""
 
 from django.db import models
 from django_countries.fields import CountryField
@@ -32,4 +39,4 @@ class GuitarSociety(models.Model):
         return self.name
 
     def __repr__(self):
-        return 'GuitarSociety("{}")'.format(self.name)
+        return '<GuitarSociety("{}")>'.format(self.name)
