@@ -32,7 +32,6 @@ def index(request):
 def country(request, country):
     societies = get_list_or_404(GuitarSociety, country=country.upper())
     country = societies[0].country
-    print(_get_all_societies())
 
     return render(request, 'societies/country.html', {
         'societies': societies,
