@@ -1,1 +1,1 @@
-web: gunicorn classicalguitar.wsgi --logfile -
+web: gunicorn classicalguitar.wsgi --log-file -
