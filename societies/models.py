@@ -29,4 +29,7 @@ class GuitarSociety(models.Model):
     region = models.CharField(max_length=512, null=True, default=None, blank=True)
 
     def __str__(self):
-        return 'GuitarSociety(name="{}", link="{}")'.format(self.name, self.link)
+        return self.name
+
+    def __repr__(self):
+        return 'GuitarSociety("{}")'.format(self.name)
