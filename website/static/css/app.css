@@ -1673,12 +1673,12 @@ th.hide-for-touch { display: table-cell !important; }
   tr.show-for-print { display: table-row !important; }
   td.show-for-print { display: table-cell !important; }
   th.show-for-print { display: table-cell !important; } }
-#header { padding: 1em 0; text-align: center; }
+#header { padding: 1em 0; }
 #header h1 { margin: 0; line-height: 1; }
-#header h4 { font-size: 1em; font-weight: normal; font-style: italic; margin: 0; }
-#header h1 a { color: #222; }
+#header h4 { font-size: 1.5em; font-weight: 300; font-style: italic; margin: 0; }
+#header .title-row { margin-bottom: 1em; }
 
-#footer { padding: 1em 0 3em; margin-top: 2em; border-top: 1px solid #CCCCCC; text-align: center; }
+#footer { padding: 1em 0 3em; margin-top: 2em; border-top: 1px solid #CCCCCC; }
 #footer p { font-size: 0.8em; margin-bottom: 0.2em; }
 
 #main { padding: 2em 0 0; }

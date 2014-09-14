@@ -17,14 +17,22 @@
     <script src="{% static 'vendor/jquery/dist/jquery.min.js' %}"></script>
     <script src="{% static 'vendor/fastclick/lib/fastclick.js' %}"></script>
     <script src="{% static 'vendor/foundation/js/foundation.min.js' %}"></script>
+    <script>
+        $(document).ready(function () { $(document).foundation(); });
+    </script>
     {% block scripts %}{% endblock %}
 </head>
 <body class="{% block bodyclass %}{% endblock %}>">
     {% block main_header %}
-    <header id="header" class="row">
-        <div class="small-12 columns">
-            <h1 class="branding"><a href="{% url 'societies:index' %}">{% trans "Classical Guitar Societies" %}</a></h1>
-            <h4 class="tagline">{% trans "Find a Classical Guitar Society Near You" %}</h4>
+    <header id="header">
+        <div class="row title-row">
+            <div class="small-12 columns">
+                <h1 class="branding">{% block page_title %}{% trans "Classical Guitar Societies" %}{% endblock %}</h1>
+                {% block page_subtitle %}{% endblock %}
+            </div>
+        </div>
+        <div class="row">
+            {% block main_navigation %}{% endblock %}
         </div>
     </header>
     {% endblock %}
