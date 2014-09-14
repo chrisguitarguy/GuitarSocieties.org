@@ -5,22 +5,20 @@
 {% block headtitle %}{% trans "Find a Classical Guitar Society" %}{% endblock %}
 
 {% block headmeta %}
-<meta name="description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society near you." %}" />
+<meta name="description" content="{% trans "Visit GuitarSocieties.org to find a classical guitar society near you." %}" />
 <meta property="og:title" content="{% trans "List of Classical Guitar Societies" %}" />
-<meta property="og:description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society near you." %}" />
+<meta property="og:description" content="{% trans "Visit GuitarSocieties.org to find a classical guitar society near you." %}" />
 {% endblock %}
 
 {% block society_body %}
-    <h1 class="page-title">{% trans 'Guitar Societies' %}</h1>
-    {% for country, societies in all_societies.items %}
-    <h4>{{ country.name }}</h4>
     <ul>
-    {% for society in societies %}
-        <li>
-            <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
-            {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
-        </li>
+    {% for country, societies in all_societies.items %}
+        {% for society in societies %}
+            <li>
+                <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
+                {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
+            </li>
+        {% endfor %}
     {% endfor %}
     </ul>
-    {% endfor %}
 {% endblock %}

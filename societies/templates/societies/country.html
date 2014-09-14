@@ -4,6 +4,8 @@
 
 {% block headtitle %}{{ country.name }} {% trans "Classical Guitar Societies" %}{% endblock %}
 
+{% block page_subtitle %}<h4>{{ country.name }}</h4>{% endblock %}
+
 {% block headmeta %}
 <meta name="description" content="{% trans "Visit ClassicalGuitar.org to find a classical guitar society in" %} {{ country.name }}." />
 <meta property="og:title" content="{{ country.name }} {% trans "Classical Guitar Societies." %}" />
@@ -11,7 +13,6 @@
 {% endblock %}
 
 {% block society_body %}
-    <h1 class="page-title">{{ country.name }} {% trans 'Guitar Societies' %}</h1>
     <ul>
     {% for society in societies %}
         <li>

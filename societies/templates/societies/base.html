@@ -2,18 +2,32 @@
 
 {% load i18n %}
 
-{% block society_nav_class %}active{% endblock %}
+{% block main_navigation %}
+<div class="small-12 columns">
+    <nav class="top-bar" data-topbar role="navigation">
+
+        <section class="top-bar-section">
+            <ul class="title-area">
+                <li><a href="{% url 'societies:index' %}">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="#">{% trans "Countries" %}</a>
+                    <ul class="dropdown">
+                        {% for country in all_societies %}
+                        <li>
+                            <a href="{% url 'societies:country' country.code|lower %}">{{ country.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            </ul>
+        </section>
+
+    </nav>
+</div>
+{% endblock %}
 
 {% block body %}
-<div class="small-12 medium-9 columns">
+<div class="small-12 columns">
     {% block society_body %}{% endblock %}
-</div>
-<div class="small-12 medium-3 columns sidebar">
-    <ul class="side-nav">
-    {% for country in all_societies %}
-    <li>
-        <a href="{% url 'societies:country' country.code|lower %}">{{ country.name }}</a>
-    </li>
-    {% endfor %}
 </div>
 {% endblock %}
