@@ -34,7 +34,7 @@ class ViewsTest(TestCase):
     def test_society_country_list_includes_correct_societies(self):
         """Check our headine and make sure a known society is on the page"""
         resp  = self.client.get(reverse('societies:country', args=('us',)))
-        self.assertContains(resp, 'United States Guitar Societies', status_code=200)
+        self.assertContains(resp, 'United States', status_code=200)
         self.assertContains(resp, 'Guitar Fort Worth')
 
     def test_single_society_redirects_to_society_link(self):
