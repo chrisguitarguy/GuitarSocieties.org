@@ -53,6 +53,9 @@ class Issue(models.Model):
     .. versionadded:: 0.1
     """
 
+    class Meta:
+        ordering = ['-created']
+
     BROKEN_LINK = 'link'
     INCORRECT_NAME = 'name'
     INCORRECT_REGION = 'region'
@@ -75,6 +78,10 @@ class Issue(models.Model):
     #: A longer description of the issue, maybe be blank
     #: .. versionadded:: 0.1
     description = models.TextField(null=True, blank=True, default=None)
+
+    #: When the issue was created
+    #: .. versionadded:: 01
+    created = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return '{} - {}'.format(self.issue_type, self.society)
