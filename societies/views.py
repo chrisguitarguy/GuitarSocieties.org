@@ -52,7 +52,7 @@ def single(request, socid):
     scheme, netloc, path, query, frag = urlparse.urlsplit(society.link)
     query = urlparse.parse_qs(query, keep_blank_values=True)
     query.update({
-        'utm_source': 'classicalguitar.org',
+        'utm_source': 'guitarsocieties.org',
         'utm_medium': 'website',
         'utm_campaign': 'guitarsocieties',
     })

@@ -1,5 +1,5 @@
 """
-Django settings for classicalguitar project.
+Django settings for website project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -13,8 +13,8 @@ import os.path as path
 import dj_database_url
 
 os.environ.setdefault('DATABASE_URL', 'postgres://localhost/cgbnext')
-os.environ.setdefault('CG_SECRET', 'h2q2#l6=3eos8a+m_v9n7u%bqwvsljomjp36yh!vy$vf^w-bpp')
-os.environ.setdefault('CG_DEBUG', '1')
+os.environ.setdefault('CGS_SECRET', 'h2q2#l6=3eos8a+m_v9n7u%bqwvsljomjp36yh!vy$vf^w-bpp')
+os.environ.setdefault('CGS_DEBUG', '1')
 
 BASE_DIR = path.dirname(path.dirname(__file__))
 PROJECT_DIR = path.abspath(path.dirname(__file__))
@@ -23,10 +23,10 @@ PROJECT_DIR = path.abspath(path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('CG_SECRET')
+SECRET_KEY = os.environ.get('CGS_SECRET')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = 'CG_DEBUG' in os.environ and os.environ['CG_DEBUG']
+DEBUG = 'CGS_DEBUG' in os.environ and os.environ['CGS_DEBUG']
 
 TEMPLATE_DEBUG = True
 
@@ -54,9 +54,9 @@ MIDDLEWARE_CLASSES = (
 )
 
 
-ROOT_URLCONF = 'classicalguitar.urls'
+ROOT_URLCONF = 'website.urls'
 
-WSGI_APPLICATION = 'classicalguitar.wsgi.application'
+WSGI_APPLICATION = 'website.wsgi.application'
 
 DATABASES = {
     'default': dj_database_url.config(),
