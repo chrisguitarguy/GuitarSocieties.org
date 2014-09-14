@@ -1,0 +1,20 @@
+{% extends 'societies/base.html' %}
+
+{% load i18n %}
+
+{% block headtitle %}{% trans "Report an Issue with" %} {{ society.name }}{% endblock %}
+
+{% block headmeta %}
+<meta name="robots" content="noindex,follow" />
+{% endblock %}
+
+{% block society_body %}
+<h3>{% trans "Report an Issue" %} <small>{{ society.name }}</small></h3>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit" class="button primary small">{% trans "Submit Issue" %}</button>
+</form>
+
+{% endblock %}

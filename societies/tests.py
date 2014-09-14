@@ -51,8 +51,36 @@ class ViewsTest(TestCase):
         self.assertContains(resp, 'Guitar Fort Worth')
 
     def test_single_society_redirects_to_society_link(self):
-        gs = GuitarSociety(name='test', country='US', link='http://www.example.com')
-        gs.save()
+        gs = self._create_society()
         resp = self.client.get(reverse('societies:single', args=(gs.pk,)), follow=False)
         self.assertEqual(302, resp.status_code)
         self.assertTrue(resp['Location'].startswith('http://www.example.com'))
+
+    def test_issue_fetch_shows_form_for_correct_society(self):
+        society = self._create_society()
+        resp = self.client.get(reverse('societies:issue', args=(society.pk,)))
+        self.assertContains(resp, 'test society', status_code=200)
+
+    def test_submit_issue_with_bad_data_shows_error_messages(self):
+        society = self._create_society()
+        resp = self.client.post(reverse('societies:issue', args=(society.pk,)), {
+            'issue_type': 'notvalid',
+        })
+        self.assertContains(resp, 'Select a valid choice')
+
+    def test_submit_issue_with_valid_data_creates_new_issue(self):
+        society = self._create_society()
+        resp = self.client.post(reverse('societies:issue', args=(society.pk,)), {
+            'issue_type': Issue.BROKEN_LINK,
+            'description': 'oops',
+        }, follow=False)
+
+        issues = Issue.objects.filter(society=society)
+
+        self.assertEqual(302, resp.status_code)
+        self.assertGreater(len(issues), 0, 'society should have at least one issue')
+
+    def _create_society(self):
+        gs = GuitarSociety(name='test society', country='US', link='http://www.example.com', active=True)
+        gs.save()
+        return gs

@@ -1682,6 +1682,8 @@ th.hide-for-touch { display: table-cell !important; }
 #footer p { font-size: 0.8em; margin-bottom: 0.2em; }
 
 .society-list dt a { color: #222; }
+.society-list .report { display: none; color: #666666; }
+.society-list dd:hover .report, .society-list li:hover .report { display: inline; }
 
 .errorlist { list-style: none outside none; margin: 0; padding: 0; }
 .errorlist li { border-style: solid; border-width: 1px; display: block; font-weight: normal; margin-bottom: 1.25rem; position: relative; padding: 0.875rem 1.5rem 0.875rem 0.875rem; font-size: 0.8125rem; transition: opacity 300ms ease-out; background-color: #f04124; border-color: #de2d0f; color: #FFFFFF; }

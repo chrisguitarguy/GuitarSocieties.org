@@ -2,4 +2,14 @@
   dt a {
     color: $body-font-color;
   }
+
+  .report {
+    display: none;
+    color: $steel;
+  }
+
+  dd:hover .report,
+  li:hover .report {
+    display: inline;
+  }
 }

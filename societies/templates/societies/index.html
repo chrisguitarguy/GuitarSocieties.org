@@ -18,6 +18,7 @@
             <dd>
                 <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
                 {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
+                <a class="report" href="{% url 'societies:issue' society.id %}"><small>Issues?</small></a>
             </dd>
         {% endfor %}
     {% endfor %}

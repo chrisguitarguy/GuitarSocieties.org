@@ -13,11 +13,12 @@
 {% endblock %}
 
 {% block society_body %}
-    <ul class="no-bullet">
+    <ul class="no-bullet society-list">
     {% for society in societies %}
         <li>
             <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
             {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
+            <a class="report" href="{% url 'societies:issue' society.id %}"><small>Issues?</small></a>
         </li>
     {% endfor %}
     </ul>
