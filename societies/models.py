@@ -9,6 +9,7 @@ societies.models
 
 from django.db import models
 from django_countries.fields import CountryField
+from django.utils.translation import ugettext_lazy as _
 
 
 class GuitarSociety(models.Model):
@@ -40,3 +41,40 @@ class GuitarSociety(models.Model):
 
     def __repr__(self):
         return '<GuitarSociety("{}")>'.format(self.name)
+
+
+class Issue(models.Model):
+    """
+    Represents a "issue" with a guitar society -- reporting a problem, etc.
+
+    .. versionadded:: 0.1
+    """
+
+    BROKEN_LINK = 'link'
+    INCORRECT_NAME = 'name'
+    INCORRECT_REGION = 'region'
+    CUSTOM_ISSUE = 'custom'
+    TYPE_CHOICES = (
+        (BROKEN_LINK, _('Broken Link')),
+        (INCORRECT_NAME, _('Incorrect Name')),
+        (INCORRECT_REGION, _('Incorrect Region')),
+        (CUSTOM_ISSUE, _('Custom')),
+    )
+
+    #: the society to which the issue belongs
+    #: .. versionadded:: 0.1
+    society = models.ForeignKey(GuitarSociety, on_delete='CASCADE')
+
+    #: What kind of issue we're ding with
+    #: .. versionadded:: 0.1
+    issue_type = models.CharField(max_length=12, choices=TYPE_CHOICES, default=CUSTOM_ISSUE)
+
+    #: A longer description of the issue, maybe be blank
+    #: .. versionadded:: 0.1
+    description = models.TextField(null=True, blank=True, default=None)
+
+    def __str__(self):
+        return '{} - {}'.format(self.issue_type, self.society)
+
+    def __repr__(self):
+        return '<Issue("{}", {})>'.format(self.issue_type, repr(self.society))

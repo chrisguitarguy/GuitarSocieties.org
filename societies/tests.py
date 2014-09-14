@@ -9,7 +9,7 @@ societies.tests
 
 from django.test import TestCase
 from django.core.urlresolvers import reverse
-from .models import GuitarSociety
+from .models import GuitarSociety, Issue
 
 class GuitarSocietyTest(TestCase):
 
@@ -20,6 +20,19 @@ class GuitarSocietyTest(TestCase):
     def test_repr_of_guitar_society_returns_class_and_name(self):
         gs = GuitarSociety(name='test')
         self.assertEqual('<GuitarSociety("test")>', repr(gs))
+
+
+class IssueTest(TestCase):
+
+    def test_str_includes_issue_type_and_society(self):
+        gs = GuitarSociety(name='test')
+        issue = Issue(issue_type=Issue.BROKEN_LINK, society=gs)
+        self.assertEqual('link - test', str(issue))
+
+    def test_repr_includes_issue_type_and_society(self):
+        gs = GuitarSociety(name='test')
+        issue = Issue(issue_type=Issue.BROKEN_LINK, society=gs)
+        self.assertEqual('<Issue("link", <GuitarSociety("test")>)>', repr(issue))
 
 
 class ViewsTest(TestCase):
