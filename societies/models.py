@@ -19,6 +19,9 @@ class GuitarSociety(models.Model):
     .. versionadded:: 0.1
     """
 
+    class Meta:
+        verbose_name_plural = _('Guitar Societies')
+
     #: the name of the society
     #: ..versionadded:: 0.1
     name = models.CharField(max_length=1024)
