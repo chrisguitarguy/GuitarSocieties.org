@@ -8,7 +8,13 @@ societies.admin
 """
 
 from django.contrib import admin
-from .models import GuitarSociety
+from .models import GuitarSociety, Issue
+
+
+class IssueInline(admin.TabularInline):
+    model = Issue
+    extra = 0
+    readonly_fields = ('created',)
 
 
 class GuitarSocietyAdmin(admin.ModelAdmin):
@@ -18,6 +24,7 @@ class GuitarSocietyAdmin(admin.ModelAdmin):
     .. versionadded:: 0.1
     """
     list_display = ('name', 'link',)
+    inlines = [IssueInline]
 
 
 admin.site.register(GuitarSociety, GuitarSocietyAdmin)
