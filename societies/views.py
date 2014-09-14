@@ -14,7 +14,7 @@ from django_countries import countries
 from .models import GuitarSociety
 
 def _get_all_societies():
-    all_societies = GuitarSociety.objects.all().order_by('country', 'region')
+    all_societies = GuitarSociety.objects.filter(active=True).order_by('country', 'region')
     societies = OrderedDict()
     for soc in all_societies:
         societies.setdefault(soc.country, list()).append(soc)
@@ -37,7 +37,7 @@ def index(request):
 
 
 def country(request, country):
-    societies = get_list_or_404(GuitarSociety, country=country.upper())
+    societies = get_list_or_404(GuitarSociety.objects.filter(active=True), country=country.upper())
     country = societies[0].country
 
     return render(request, 'societies/country.html', {
@@ -48,7 +48,7 @@ def country(request, country):
 
 
 def single(request, socid):
-    society = get_object_or_404(GuitarSociety, pk=socid)
+    society = get_object_or_404(GuitarSociety, pk=socid, active=True)
     scheme, netloc, path, query, frag = urlparse.urlsplit(society.link)
     query = urlparse.parse_qs(query, keep_blank_values=True)
     query.update({
