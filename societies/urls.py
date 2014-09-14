@@ -12,6 +12,6 @@ from . import views
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
-    url(r'^(?P<country>[a-z]{2})$', views.country, name='country'),
-    url(r'^(?P<socid>\d+)$', views.single, name='single'),
+    url(r'^country/(?P<country>[a-z]{2})$', views.country, name='country'),
+    url(r'^go/(?P<socid>\d+)$', views.single, name='single'),
 )
