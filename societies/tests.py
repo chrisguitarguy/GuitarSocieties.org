@@ -68,6 +68,13 @@ class ViewsTest(TestCase):
         })
         self.assertContains(resp, 'Select a valid choice')
 
+    def test_submit_custom_issue_without_description_shows_as_invalid(self):
+        society = self._create_society()
+        resp = self.client.post(reverse('societies:issue', args=(society.pk,)), {
+            'issue_type': Issue.CUSTOM_ISSUE,
+        })
+        self.assertContains(resp, 'describe the issue')
+
     def test_submit_issue_with_valid_data_creates_new_issue(self):
         society = self._create_society()
         resp = self.client.post(reverse('societies:issue', args=(society.pk,)), {
