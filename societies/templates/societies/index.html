@@ -11,9 +11,9 @@
 {% endblock %}
 
 {% block society_body %}
-    <dl>
+    <dl class="society-list">
     {% for country, societies in all_societies.items %}
-        <dt>{{ country.name }}</dt>
+        <dt><a href="{% url 'societies:country' country.code|lower %}">{{ country.name }}</a></dt>
         {% for society in societies %}
             <dd>
                 <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
