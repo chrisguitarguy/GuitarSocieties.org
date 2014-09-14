@@ -1680,9 +1680,3 @@ th.hide-for-touch { display: table-cell !important; }
 
 #footer { padding: 1em 0 3em; margin-top: 2em; border-top: 1px solid #CCCCCC; }
 #footer p { font-size: 0.8em; margin-bottom: 0.2em; }
-
-#main { padding: 2em 0 0; }
-
-.sidebar .side-nav:first-child { padding-top: 0; }
-
-.page-title { margin-top: 0; line-height: 1; }
