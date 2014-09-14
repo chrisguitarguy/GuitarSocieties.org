@@ -1,11 +1,10 @@
+# -*- coding: utf-8 -*-
 """
-Django settings for website project.
+GuitarSocieties.org
+~~~~~~~~~~~~~~~~~~~
 
-For more information on this file, see
-https://docs.djangoproject.com/en/1.7/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.7/ref/settings/
+:copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
+:license: http://opensource.org/licenses/bsd-3-clause
 """
 
 import os
