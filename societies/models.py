@@ -72,7 +72,7 @@ class Issue(models.Model):
         (BROKEN_LINK, _('Broken Link')),
         (INCORRECT_NAME, _('Incorrect Name')),
         (INCORRECT_REGION, _('Incorrect Region')),
-        (CUSTOM_ISSUE, _('Custom')),
+        (CUSTOM_ISSUE, _('Custom (Please Explain)')),
     )
 
     #: the society to which the issue belongs
@@ -81,7 +81,7 @@ class Issue(models.Model):
 
     #: What kind of issue we're ding with
     #: .. versionadded:: 0.1
-    issue_type = models.CharField(max_length=12, choices=TYPE_CHOICES, default=CUSTOM_ISSUE)
+    issue_type = models.CharField(max_length=12, choices=TYPE_CHOICES, default=BROKEN_LINK)
 
     #: A longer description of the issue, maybe be blank
     #: .. versionadded:: 0.1
