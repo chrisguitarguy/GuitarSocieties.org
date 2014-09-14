@@ -24,6 +24,7 @@ class GuitarSocietyAdmin(admin.ModelAdmin):
     .. versionadded:: 0.1
     """
     list_display = ('name', 'link',)
+    readonly_fields = ('created',)
     inlines = [IssueInline]
 
 

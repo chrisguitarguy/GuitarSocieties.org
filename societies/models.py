@@ -39,6 +39,14 @@ class GuitarSociety(models.Model):
     #: .. versionadded:: 0.1
     region = models.CharField(max_length=512, null=True, default=None, blank=True)
 
+    #: When the guitar society was first added.
+    #: .. versionadded:: 0.1
+    created = models.DateTimeField(auto_now_add=True)
+
+    #: Whether or not the guitar society is active (can be displayed on the frontend).
+    #: .. versionadded:: 0.1
+    active = models.BooleanField(default=False)
+
     def __str__(self):
         return self.name
 
@@ -69,7 +77,7 @@ class Issue(models.Model):
 
     #: the society to which the issue belongs
     #: .. versionadded:: 0.1
-    society = models.ForeignKey(GuitarSociety, on_delete='CASCADE')
+    society = models.ForeignKey(GuitarSociety, on_delete=models.CASCADE)
 
     #: What kind of issue we're ding with
     #: .. versionadded:: 0.1
