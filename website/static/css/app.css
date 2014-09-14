@@ -45,7 +45,7 @@ textarea { height: auto; min-height: 50px; }
 
 select { width: 100%; }
 
-.row { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 62.5rem; }
+.row { width: 100%; margin-left: auto; margin-right: auto; margin-top: 0; margin-bottom: 0; max-width: 37.5rem; }
 .row:before, .row:after { content: " "; display: table; }
 .row:after { clear: both; }
 .row.collapse > .column, .row.collapse > .columns { padding-left: 0; padding-right: 0; }
@@ -1035,18 +1035,18 @@ ul.pagination li { float: left; display: block; }
 .reveal-modal .column, dialog .column, .reveal-modal .columns, dialog .columns { min-width: 0; }
 .reveal-modal > :first-child, dialog > :first-child { margin-top: 0; }
 .reveal-modal > :last-child, dialog > :last-child { margin-bottom: 0; }
-@media only screen and (min-width: 40.063em) { .reveal-modal, dialog { width: 80%; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal, dialog { width: 80%; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
 @media only screen and (min-width: 40.063em) { .reveal-modal, dialog { top: 6.25rem; } }
 .reveal-modal.radius, dialog.radius { border-radius: 3px; }
 .reveal-modal.round, dialog.round { border-radius: 1000px; }
 .reveal-modal.collapse, dialog.collapse { padding: 0; }
-@media only screen and (min-width: 40.063em) { .reveal-modal.tiny, dialog.tiny { width: 30%; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
-@media only screen and (min-width: 40.063em) { .reveal-modal.small, dialog.small { width: 40%; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
-@media only screen and (min-width: 40.063em) { .reveal-modal.medium, dialog.medium { width: 60%; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
-@media only screen and (min-width: 40.063em) { .reveal-modal.large, dialog.large { width: 70%; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
-@media only screen and (min-width: 40.063em) { .reveal-modal.xlarge, dialog.xlarge { width: 95%; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal.tiny, dialog.tiny { width: 30%; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal.small, dialog.small { width: 40%; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal.medium, dialog.medium { width: 60%; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal.large, dialog.large { width: 70%; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal.xlarge, dialog.xlarge { width: 95%; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
 .reveal-modal.full, dialog.full { top: 0; left: 0; height: 100%; height: 100vh; min-height: 100vh; margin-left: 0 !important; }
-@media only screen and (min-width: 40.063em) { .reveal-modal.full, dialog.full { width: 100vw; max-width: 62.5rem; left: 0; right: 0; margin: 0 auto; } }
+@media only screen and (min-width: 40.063em) { .reveal-modal.full, dialog.full { width: 100vw; max-width: 37.5rem; left: 0; right: 0; margin: 0 auto; } }
 .reveal-modal .close-reveal-modal, dialog .close-reveal-modal { font-size: 2.5rem; line-height: 1; position: absolute; top: 0.5rem; right: 0.6875rem; color: #AAAAAA; font-weight: bold; cursor: pointer; }
 
 dialog { display: none; }
@@ -1436,7 +1436,7 @@ meta.foundation-mq-topbar { font-family: "/only screen and (min-width:40.063em)/
   .top-bar .name h1 a { width: auto; }
   .top-bar input, .top-bar .button, .top-bar button { font-size: 0.875rem; position: relative; top: 7px; }
   .top-bar.expanded { background: #333333; }
-  .contain-to-grid .top-bar { max-width: 62.5rem; margin: 0 auto; margin-bottom: 0; }
+  .contain-to-grid .top-bar { max-width: 37.5rem; margin: 0 auto; margin-bottom: 0; }
   .top-bar-section { transition: none 0 0; left: 0 !important; }
   .top-bar-section ul { width: auto; height: auto !important; display: inline; }
   .top-bar-section ul li { float: left; }
@@ -1673,14 +1673,13 @@ th.hide-for-touch { display: table-cell !important; }
   tr.show-for-print { display: table-row !important; }
   td.show-for-print { display: table-cell !important; }
   th.show-for-print { display: table-cell !important; } }
-#header { padding: 1em 0; }
+#header { padding: 1em 0; text-align: center; }
 #header h1 { margin: 0; line-height: 1; }
 #header h4 { font-size: 1em; font-weight: normal; font-style: italic; margin: 0; }
 #header h1 a { color: #222; }
-#header h1 a:hover { color: #3c3c3c; }
 
-#footer { padding: 1em 0; margin-top: 2em; border-top: 1px solid #EFEFEF; }
-#footer p { font-size: 0.8em; }
+#footer { padding: 1em 0 3em; margin-top: 2em; border-top: 1px solid #CCCCCC; text-align: center; }
+#footer p { font-size: 0.8em; margin-bottom: 0.2em; }
 
 #main { padding: 2em 0 0; }
 

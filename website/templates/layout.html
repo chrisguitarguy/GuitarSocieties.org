@@ -5,10 +5,9 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{% block headtitle %}{% endblock %} :: ClassicalGuitar.org</title>
-    <meta name="robots" content="noindex,nofollow" />
+    <title>{% block headtitle %}{% endblock %} :: GuitarSocieties.org</title>
     <meta property="og:type" content="{% block headogtype %}website{% endblock %}" />
-    <meta property="og:sitename" content="ClassicalGuitar.org" />
+    <meta property="og:sitename" content="GuitarSocieties.org" />
     {% block headmeta %}{% endblock %}
 
     <link rel="stylesheet" href="{% static 'css/app.css' %}" />
@@ -24,23 +23,10 @@
     {% block main_header %}
     <header id="header" class="row">
         <div class="small-12 columns">
-            <h1 class="branding"><a href="{% url 'homepage' %}">{% trans 'Classical Guitar' %}</a></h1>
-            <h4 class="tagline">{% trans 'Classical Guitar Lessons, Interviews, News, Tips & More' %}</h4>
+            <h1 class="branding"><a href="{% url 'homepage' %}">{% trans "Classical Guitar Societies" %}</a></h1>
+            <h4 class="tagline">{% trans "Find a Classical Guitar Society Near You" %}</h4>
         </div>
     </header>
-    {% endblock %}
-    {% block main_navigation %}
-    <div class="contain-to-grid">
-        <nav class="top-bar" data-topbar role="navigation">
-            <section class="top-bar-section">
-                <ul>
-                    <li class="{% block society_nav_class %}{% endblock %}">
-                        <a href="{% url 'societies:index' %}">{% trans 'Guitar Societies' %}</a>
-                    </li>
-                </ul>
-            </section>
-        </nav>
-    </div>
     {% endblock %}
 
     <div id="main">
@@ -50,17 +36,17 @@
     </div>
 
     {% block main_footer %}
-    <footer id="footer">
-        <div class="row">
-            <div class="small-12 columns">
-                <p>
-                    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
-                        <img alt="{% trans 'Creative Commons License' %}" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
-                    </a>
-                    {% trans "Website by" %}
-                    <a href="http://christopherdavis.me" rel="external">Christopher Davis</a>.
-                </p>
-            </div>
+    <footer id="footer" class="row">
+        <div class="small-12 columns">
+            <p>
+                <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">
+                    <img alt="{% trans 'Creative Commons License' %}" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/80x15.png" />
+                </a>
+            </p>
+            <p>
+                {% trans "Website by" %}
+                <a href="http://christopherdavis.me" rel="external">Christopher Davis</a>.
+            </p>
         </div>
     </footer>
     {% endblock %}
