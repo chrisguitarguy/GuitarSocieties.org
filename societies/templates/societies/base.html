@@ -28,6 +28,19 @@
 
 {% block body %}
 <div class="small-12 columns">
+    {% block messages %}
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div data-alert class="alert-box {{ message.tags }}">
+                {{ message }}
+                <a href="#" class="close">&times;</a>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endblock %}
+
     {% block society_body %}{% endblock %}
 </div>
 {% endblock %}
