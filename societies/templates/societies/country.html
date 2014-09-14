@@ -13,7 +13,7 @@
 {% endblock %}
 
 {% block society_body %}
-    <ul>
+    <ul class="no-bullet">
     {% for society in societies %}
         <li>
             <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>

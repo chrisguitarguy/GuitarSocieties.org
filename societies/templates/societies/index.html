@@ -11,13 +11,14 @@
 {% endblock %}
 
 {% block society_body %}
-    <ul>
+    <dl>
     {% for country, societies in all_societies.items %}
+        <dt>{{ country.name }}</dt>
         {% for society in societies %}
-            <li>
+            <dd>
                 <a href="{% url 'societies:single' society.id %}">{{ society.name }}</a>
                 {% if society.region %}&mdash; <em>{{ society.region }}</em>{% endif %}
-            </li>
+            </dd>
         {% endfor %}
     {% endfor %}
     </ul>
