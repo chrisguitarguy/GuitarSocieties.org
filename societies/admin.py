@@ -4,7 +4,7 @@ societies.admin
 ~~~~~~~~~~~~~~~
 
 :copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
-:license: Proprietary
+:license: http://opensource.org/licenses/bsd-3-clause
 """
 
 from django.contrib import admin

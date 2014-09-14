@@ -4,12 +4,13 @@ societies.tests
 ~~~~~~~~~~~~~~~
 
 :copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
-:license: Proprietary
+:license: http://opensource.org/licenses/bsd-3-clause
 """
 
 from django.test import TestCase
 from django.core.urlresolvers import reverse
 from .models import GuitarSociety, Issue
+
 
 class GuitarSocietyTest(TestCase):
 

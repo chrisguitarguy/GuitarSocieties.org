@@ -4,11 +4,12 @@ societies.urls
 ~~~~~~~~~~~~~~
 
 :copyright: (c) 2014 Christopher Davis <http://christopherdavis.me>
-:license: Proprietary
+:license: http://opensource.org/licenses/bsd-3-clause
 """
 
 from django.conf.urls import patterns, url
 from . import views
+
 
 urlpatterns = patterns('',
     url(r'^$', views.index, name='index'),
